@@ -28,15 +28,20 @@ CSS custom properties(variables), 即CSS自定义属性，又叫CSS变量。
 
 ![CSS gradient兼容性](images/caniuseGradient.png)
 
-2. 线性渐变
+2. 线性渐变`background-image: linear-gradient(args);`
+```
+args = ([<angle> | to <side-or-corner>]? <color-stop> [, <color-stop>]+ )
 
-> background-image: linear-gradient(...);
+渐变角度：<angle> = 0deg - 360deg
+使用<side-or-corner> = <left [bottom | top]> | <right [bottom | top]> | top | bottom
+<color-stop> = <color> [<percentage> | <length>]
+``` 
 
-3. 径向渐变
+3. 径向渐变`background-image: radial-gradient(args);`
+```
+args = 
 
-> background-size: 20px 30px;
-
-> background-image: radial-gradient(...);
+```
 
 4. 结合CSS变量实现炫酷效果
 
