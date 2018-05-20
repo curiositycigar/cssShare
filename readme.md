@@ -1,26 +1,71 @@
 # CSS
+
 ## 1. CSS变量
+
 ### 什么是CSS变量
 
 CSS custom properties(variables), 即CSS自定义属性，又叫CSS变量。
 
 #### css变量有两种形式
 
-1. 变量，就是拥有合法标识符和合法的值。可以被使用在任意的地方。可以使用var()函数使用变量。例如：var(--example-variable)会返回--example-variable所对应的值
-2. 自定义属性。这些属性使用--*where*的特殊格式作为名字。例如--example-variable: 20px;即使一个css声明语句。意思是将20px赋值给--example-varibale变量
-3. CSS变量兼容性
-![CSS变量兼容性](./images/caniuse.png)
-4. CSS变量使用
+> 变量，就是拥有合法标识符和合法的值。可以被使用在任意的地方。可以使用var()函数使用变量。例如：var(--example-variable)会返回--example-variable所对应的值
+
+> 自定义属性。这些属性使用--*where*的特殊格式作为名字。例如--example-variable: 20px;即使一个css声明语句。意思是将20px赋值给--example-varibale变量
+
+1. CSS变量兼容性
+
+![CSS变量兼容性](images/caniuseVariables.png)
+
+2. CSS变量使用
+
     1. 在选择器内使用
     2. 继承与重载
     3. js操作css变量
-## 2. CSS形状
-back-groundsize: 20px 30px;
-background-image: radial-gradient(...);
-background-image: linear-gradient(...);
-## 3. CSS 3D
+    
+## 2. CSS渐变
+
+1. CSS渐变兼容性
+
+![CSS gradient兼容性](images/caniuseGradient.png)
+
+2. 线性渐变
+
+> background-image: linear-gradient(...);
+
+3. 径向渐变
+
+> background-size: 20px 30px;
+
+> background-image: radial-gradient(...);
+
+4. 结合CSS变量实现炫酷效果
+
+## 3. CSS transform3D
+
+1. CSS transform3D兼容性
+![CSS 3D兼容性](images/caniuseTransform3d.png)
+
+2. 简单介绍
+
+3. 结合CSS变量使用
+
 ## 4. CSS动画
-@keyframes
-## 5. CSS+SVG动画
-translate
-## 补充: 强大的filter属性
+
+1. CSS animation兼容性
+![CSS animation兼容性](images/caniuseCSSAnimation.png)
+
+2. @keyframes 介绍
+## 5. SVG
+1. SVG兼容性
+![SVG兼容性](images/caniuseSvg.png)
+
+2. SVG介绍
+
+3. 结合css动画实现炫酷SVG效果
+
+## 补充: CSS filter属性
+
+1. CSS filter兼容性
+![CSS filter兼容性](images/caniuseCSSFilter.png)
+
+2. filter各种属性介绍
