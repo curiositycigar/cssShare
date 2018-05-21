@@ -47,10 +47,16 @@ args =
 
 ## 3. CSS transform3D
 
+### 简单介绍
+
+1. CSS2D变换包括平移(translate)、旋转(rotate)、缩放(scale)，3D变换也一样：translate3d、rotate3d、scale3d
+2. 也可以分开写: translateX、translateX、translateX， 其他两个类似
+3. perspective
+
 1. CSS transform3D兼容性
 ![CSS 3D兼容性](images/caniuseTransform3d.png)
 
-2. 简单介绍
+2. 使用
 
 3. 结合CSS变量使用
 
@@ -66,7 +72,7 @@ args =
 
 2. SVG介绍
 
-3. 结合css动画实现炫酷SVG效果
+3. SVG结合css动画
 
 ## 补充: CSS filter属性
 
