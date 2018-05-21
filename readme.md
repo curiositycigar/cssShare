@@ -39,7 +39,11 @@ args = ([<angle> | to <side-or-corner>]? <color-stop> [, <color-stop>]+ )
 
 3. 径向渐变`background-image: radial-gradient(args);`
 ```
-args = 
+args = ([ circle || <length> ] [ at <position> ]? ,
+       | [ ellipse || [<length> | <percentage> ]{2}] [ at <position> ]? ,
+       | [ [ circle | ellipse ] || <extent-keyword> ] [ at <position> ]? ,
+       | at <position> ,
+       <color-stop> [ , <color-stop> ]+) 
 
 ```
 
@@ -50,29 +54,40 @@ args =
 ### 简单介绍
 
 1. CSS2D变换包括平移(translate)、旋转(rotate)、缩放(scale)，3D变换也一样：translate3d、rotate3d、scale3d
-2. 也可以分开写: translateX、translateX、translateX， 其他两个类似
-3. perspective
-
+2. 也可以分开写: translateX、translateX、translateX， 旋转和缩放类似
+3. 3D变换最重要的一个属性是perspective，他决定了3D变换的透视距离，有两种用法:
+    - 作为属性在进行3d变换元素的父元素上使用：perspective: 300px
+    - 直接在当前元素的transform上使用：transform: perspective(300px), rotateY(40deg)
+### 使用
 1. CSS transform3D兼容性
 ![CSS 3D兼容性](images/caniuseTransform3d.png)
 
-2. 使用
+2. 用法
 
 3. 结合CSS变量使用
 
 ## 4. CSS动画
 
+### 简单介绍
+CSS 动画属性可能大家都用过
+### 使用
 1. CSS animation兼容性
 ![CSS animation兼容性](images/caniuseCSSAnimation.png)
 
-2. @keyframes 介绍
+2. 用法
 ## 5. SVG
 1. SVG兼容性
 ![SVG兼容性](images/caniuseSvg.png)
 
 2. SVG介绍
+    - svg内置图形
+    - path介绍
 
-3. SVG结合css动画
+3. SVG线条动画
+```
+stroke-dasharray
+stroke-dashoffect
+```
 
 ## 补充: CSS filter属性
 
