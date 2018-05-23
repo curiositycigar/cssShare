@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <title>Title</title>
   <style type="text/css">
+    button {
+      margin: 30px auto 30px 50%;
+    }
+
     .button {
       --size: 200px;
       --x: 0;
@@ -20,7 +24,6 @@
       overflow: hidden;
       cursor: pointer;
       outline: none;
-      margin: 100px;
     }
 
     .button:before {
@@ -54,7 +57,6 @@
       border: none;
       cursor: pointer;
       outline: none;
-      margin: 100px;
       transform: perspective(300px) rotate3d(0, 1, 0, var(--deg));
       transition: all .2s;
     }
@@ -78,7 +80,7 @@
       stroke-dasharray: 560;
       stroke: #f00;
       fill: rgba(0, 0, 0, 0);
-      animation: path 2s linear 1;
+      animation: path 2s linear infinite;
     }
 
     @keyframes path {
