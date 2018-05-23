@@ -4,13 +4,12 @@
 
 ### 什么是CSS变量
 
-CSS custom properties(variables), 即CSS自定义属性，又叫CSS变量。
+当前，CSS变量有两种描述，CSS自定义属性，又叫CSS变量。
 
-#### css变量有两种形式
 
-> 变量，就是拥有合法标识符和合法的值。可以被使用在任意的地方。可以使用var()函数使用变量。例如：var(--example-variable)会返回--example-variable所对应的值
+    **CSS变量**: 拥有合法标识符和合法的值。可以被使用在任意的地方。可以使用var()函数使用变量。例如：var(--example-variable)会返回--example-variable所对应的值
 
-> 自定义属性。这些属性使用--*where*的特殊格式作为名字。例如--example-variable: 20px;即使一个css声明语句。意思是将20px赋值给--example-varibale变量
+    **CSS自定义属性**: 这些属性使用--*where*的特殊格式作为名字。例如--example-variable: 20px;即使一个css声明语句。意思是将20px赋值给--example-varibale变量
 
 1. CSS变量兼容性
 
@@ -19,8 +18,41 @@ CSS custom properties(variables), 即CSS自定义属性，又叫CSS变量。
 2. CSS变量使用
 
     1. 在选择器内使用
-    2. 继承与重载
+    2. 自定义属性遵循CSS级联规则（或者说可以继承和重载）
+        使用:root来定义全局变量
+        ```css
+           :root {
+             --bg-color: #f00;
+           }
+        ```
+        在特定元素下定义局部变量
+        ```css
+            div.myClass{
+              --width: 100px;
+            }
+        ```
+        
+        **媒体查询和伪类同样可以提供子作用域**
+        
+        媒体查询中的变量
+        ```css
+            @media screen and (max-width: 400px){
+              :root{
+                --bg-color: #00f;
+              }
+            }
+        ```
+        伪类下的变量
+        ```css
+            div:hover{
+              --width: 120px;
+            }
+        ```
     3. js操作css变量
+        ```css
+           /* css变量很大的一个好处就是它是动态的，我们可以随时通过js去改变变量的值，其他使用相应变量的属性也会同时改变 */
+           /* 所以，利用css变量，我们可以很容易的实现许多页面效果 */
+        ```
     
 ## 2. CSS渐变
 
