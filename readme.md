@@ -209,7 +209,7 @@ args = ([ circle || <length> ] [ at <position> ]? ,
 
 2D变换的坐标轴是平面的，只有X，Y轴，对应于页面坐标系。 3D变换多了一个Z轴，从屏幕往前的方向为Z轴的正方向，如下图：
 
-### 3d变换简介 [动画演示](https://codepen.io/LcCode/pen/VxOQKQ)
+### 3d变换简介 [动画演示](https://codepen.io/LcCode/pen/Gdaxbj)
 
 CSS3D变换和2D变换相似，也包括平移(translate3d)、旋转(rotate3d)、缩放(scale3d)三种操作
 
