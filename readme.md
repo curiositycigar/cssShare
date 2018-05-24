@@ -28,7 +28,7 @@
 
 ### CSS变量使用
 
-使用:root来定义全局变量
+使用`:root`来定义全局变量
 ```css
    :root {
      --bg-color: #f00;
@@ -64,6 +64,8 @@ js操作css变量
 ```
     
 ## 2. CSS渐变
+
+### CSS渐变描述
 
 ### CSS渐变兼容性
 
@@ -115,18 +117,68 @@ args = ([ circle || <length> ] [ at <position> ]? ,
 
 ### 简单介绍
 
-1. CSS2D变换包括平移(translate)、旋转(rotate)、缩放(scale)，3D变换也一样：translate3d、rotate3d、scale3d
-2. 也可以分开写: translateX、translateX、translateX， 旋转和缩放类似
-3. 3D变换最重要的一个属性是perspective，他决定了3D变换的透视距离，有两种用法:
-    - 作为属性在进行3d变换元素的父元素上使用：perspective: 300px
-    - 直接在当前元素的transform上使用：transform: perspective(300px), rotateY(40deg)
-### 使用
-1. CSS transform3D兼容性
+#### 了解3D变换的坐标轴
+
+![CSS 3D兼容性](images/3d.png)
+
+2D变换的坐标轴是平面的，只有X，Y轴，对应于页面坐标系。 3D变换多了一个Z轴，朝向屏幕的方向为Z轴的正方向，如下图：
+
+#### 3D变换的css属性
+
+CSS3D变换和2D变换相似，也包括平移(translate3d)、旋转(rotate3d)、缩放(scale3d)三种操作
+
+也可以分开写。比如，平移可以分别写为: translateX、translateX、translateX
+
+##### **属性介绍：**
+
+**perspective（透视）：** 3D变换最重要的一个属性，它决定了3D变换的透视距离，不设置则所有的，有两种用法:
+
+    - 作为属性在进行3d变换元素的父元素上使用
+    - 直接在当前元素的transform上使用
+
+**transform：** 3d变换和2d变换的基础元素，在transform属性中使用变换方法，就可以对元素进行响应的变换操作。
+
+**transform-orign：** 设置旋转的基点。默认的属性值为`transform-orign:50% 50% 0`，即相对于元素的中心点旋转(即left为元素的50%，top为元素的50%)。
+
+**transform-style：** 规定3D变换元素的子元素是否应用3D变换，共有两个属性值。`flat`表示所有子元素应用2D变换；`preserve-3d`表示所有子元素应用3D变换
+
+**perspective-origin（透视）：** 定义3D元素所基于的X轴和Y轴。即变换的中心点。
+
+语法: `perspective-origin: x-axis y-axis;`
+
+x-axis取值: `left | right | center | length | %`
+y-axis取值: `top | bottom | center | length | %`
+
+例:
+```css
+    div{
+        perspective-origin: 50% 50%;
+    }
+```
+    
+#### CSS transform3D兼容性
 ![CSS 3D兼容性](images/caniuseTransform3d.png)
 
-2. 用法
+#### 使用
 
-3. 结合CSS变量使用
+##### 和父元素结合使用
+```css
+    .parent{
+        perspective: 300px;
+    }
+    .parent div{
+        transform: rotateY(40deg);
+    }
+```
+
+##### 直接在当前元素使用
+```css
+    div{
+        transform: perspective(300px) rotateY(40deg);
+    }
+```
+
+##### 结合CSS变量使用
 
 ## 4. CSS动画
 
