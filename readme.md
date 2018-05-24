@@ -28,13 +28,13 @@
 
 ### CSS变量使用
 
-使用`:root`来定义全局变量 [代码](https://codepen.io/LcCode/pen/XqwePg)
+#### 使用`:root`来定义全局变量 [代码](https://codepen.io/LcCode/pen/XqwePg)
 ```css
    :root {
      --bg-color: #f00;
    }
 ```
-在特定元素下定义局部变量 [代码](https://codepen.io/LcCode/pen/mLYMvp)
+#### 在特定元素下定义局部变量 [代码](https://codepen.io/LcCode/pen/mLYMvp)
 ```css
     div.myClass{
       --width: 100px;
@@ -43,7 +43,7 @@
 
 **媒体查询和伪类同样可以提供子作用域**
 
-媒体查询中的变量 [代码](https://codepen.io/LcCode/pen/MGdEWW)
+#### 媒体查询中的变量 [代码](https://codepen.io/LcCode/pen/MGdEWW)
 ```css
     @media screen and (max-width: 400px){
       :root{
@@ -51,7 +51,7 @@
       }
     }
 ```
-伪类下的变量 [代码](https://codepen.io/LcCode/pen/pVmWyo)
+#### 伪类下的变量 [代码](https://codepen.io/LcCode/pen/pVmWyo)
 ```css
     div:hover{
       --width: 120px;
