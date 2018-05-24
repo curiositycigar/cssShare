@@ -11,7 +11,7 @@
 
 > **CSS自定义属性**: 这些属性使用--*where*的特殊格式作为名字。例如--example-variable: 20px;即使一个css声明语句。意思是将20px赋值给--example-varibale变量
 
-示例
+示例 [代码](https://codepen.io/LcCode/pen/mLYMvp)
 ```css
   div{
     /* 变量定义 */
@@ -28,7 +28,7 @@
 
 ### CSS变量使用
 
-使用`:root`来定义全局变量
+使用`:root`来定义全局变量 [代码](https://codepen.io/LcCode/pen/MGdEWW)
 ```css
    :root {
      --bg-color: #f00;
@@ -43,7 +43,7 @@
 
 **媒体查询和伪类同样可以提供子作用域**
 
-媒体查询中的变量
+媒体查询中的变量 [代码](https://codepen.io/LcCode/pen/MGdEWW)
 ```css
     @media screen and (max-width: 400px){
       :root{
@@ -51,7 +51,7 @@
       }
     }
 ```
-伪类下的变量
+伪类下的变量 [代码](https://codepen.io/LcCode/pen/pVmWyo)
 ```css
     div:hover{
       --width: 120px;
@@ -67,6 +67,16 @@ js操作css变量
 
 ### CSS渐变描述
 
+css3渐变可以让你从两个或者两个以上的颜色之间显示平稳的过渡。
+
+以前这样做需要用到图片,现在直接使用css3中的属性可以实现。
+
+好处：
+
+    1. 减少页面下载的时间和并节省带宽
+    2. 可以放大不失真
+    3. 有更强的可控性。
+
 ### CSS渐变兼容性
 
 ![CSS gradient兼容性](images/caniuseGradient.png)
@@ -76,7 +86,16 @@ js操作css变量
 css渐变共有两种，线性渐变和径向渐变
 
 #### 线性渐变
+
+一个线性渐变，必须至少定义两种颜色结点。
+
+颜色结点即你想要呈现平稳过渡的颜色。
+
+同时，你也可以指定渐变的方向(角度)、每一个颜色的位置。
+默认情况下，渐变的方向是向下(0deg), 第一个颜色的位置是0, 最后一个的位置是100%, 中间的所有颜色平均分布。
+
 `background-image: linear-gradient(args);`
+
 ```
 args = ([<angle> | to <side-or-corner>]? <color-stop> [, <color-stop>]+ )
 
@@ -84,7 +103,24 @@ args = ([<angle> | to <side-or-corner>]? <color-stop> [, <color-stop>]+ )
 <side-or-corner> = <left [bottom | top]> | <right [bottom | top]> | top | bottom
 <color-stop> = <color> [<percentage> | <length>]
 ``` 
+
 #### 线性渐变示例
+
+##### 基础使用 [代码](https://codepen.io/LcCode/pen/wjbrgZ)
+
+```css
+  div {
+      background-image: linear-gradient(#f00, #00f);
+  }
+```
+##### 自定义渐变角度 [代码](https://codepen.io/LcCode/pen/OZYxmd)
+
+```css
+  div {
+      background-image: linear-gradient(45deg, #f00, #0f0);
+  }
+```
+##### 自定义每个颜色的起止位置 [代码](https://codepen.io/LcCode/pen/vjweea)
 
 ```css
   div {
@@ -93,6 +129,13 @@ args = ([<angle> | to <side-or-corner>]? <color-stop> [, <color-stop>]+ )
 ```
 
 #### 径向渐变
+
+创建一个径向渐变，你也必须至少定义两种颜色结点。
+
+颜色结点即你想要呈现平稳过渡的颜色。
+
+同时，你也可以指定渐变的中心、形状（圆形或椭圆形）、大小。
+默认情况下，渐变的中心是 center（表示在中心点），渐变的形状是 ellipse（表示椭圆形），渐变的大小是 farthest-corner（表示到最远的角落）
 
 `background-image: radial-gradient(args);`
 ```
@@ -105,9 +148,11 @@ args = ([ circle || <length> ] [ at <position> ]? ,
 ```
 #### 径向渐变示例
 
+##### 基础使用
+
 ```css
     div {
-        background-image: radial-gradient(circle 10px, #00ff00, #0000ff);
+        background-image: radial-gradient(#0f0, #00f);
     }
 ```
 
@@ -119,7 +164,7 @@ args = ([ circle || <length> ] [ at <position> ]? ,
 
 ![CSS 3D兼容性](images/3d.png)
 
-2D变换的坐标轴是平面的，只有X，Y轴，对应于页面坐标系。 3D变换多了一个Z轴，朝向屏幕的方向为Z轴的正方向，如下图：
+2D变换的坐标轴是平面的，只有X，Y轴，对应于页面坐标系。 3D变换多了一个Z轴，从屏幕往前的方向为Z轴的正方向，如下图：
 
 ### 3d变换简介(动画演示)
 
@@ -150,7 +195,7 @@ CSS3D变换和2D变换相似，也包括平移(translate3d)、旋转(rotate3d)�
 
 - **transform：** 3d变换和2d变换的基础元素，在transform属性中使用变换方法，就可以对元素进行响应的变换操作。
 
-- **transform-orign：** 设置旋转的基点。默认的属性值为`transform-orign:50% 50% 0`，即相对于元素的中心点旋转(即left为元素的50%，top为元素的50%)。
+- **transform-orign：** 设置旋转的基点默认的属性值为`transform-orign:50% 50% 0`，相对于元素的中心点旋转(即left为元素的50%，top为元素的50%)。
 
 - **transform-style：** 规定3D变换元素的子元素是否应用3D变换，共有两个属性值。`flat`表示所有子元素应用2D变换；`preserve-3d`表示所有子元素应用3D变换
 
