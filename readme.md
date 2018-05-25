@@ -1,17 +1,27 @@
 # CSS
 
+css变量、渐变、3d变换、动画及简单应用
+
 ## 1. CSS变量
 
 ### 什么是CSS变量
 
-当前，CSS变量有两种描述，CSS自定义属性，又叫CSS变量。
-
+当前，CSS变量有两种描述，**`CSS变量`** 和 **`CSS自定义属性`** 。
 
 > **CSS变量**: 拥有合法标识符和合法的值。可以被使用在任意的地方。可以使用var()函数使用变量。例如：var(--example-variable)会返回--example-variable所对应的值
 
 > **CSS自定义属性**: 这些属性使用--*where*的特殊格式作为名字。例如--example-variable: 20px;即使一个css声明语句。意思是将20px赋值给--example-varibale变量
 
-示例
+这个是从MDN上摘抄的两段描述，其实就是定义变量和使用变量的过程。
+
+变量必须以“--”开头，并为字母、数字、下划线和“-”的组合*(也可以是中文、日文、韩文文字)，css变量的命名同样是区分大小写的。
+
+一般情况下会使用“-”拼接的形式进行命名，如`--header-bg`、`--header-color`。
+
+变量使用时，必须用`var()`包裹起来，如将`--width`变量应用到宽度上，`width: var(--width);`。
+
+如下是一个简单的使用示例，定义了`--width`变量
+
 ```css
   div{
     /* 变量定义 */
@@ -34,6 +44,7 @@
      --bg-color: #f00;
    }
 ```
+
 #### 在特定元素下定义局部变量 [代码](https://codepen.io/LcCode/pen/mLYMvp)
 ```css
     div.myClass{
@@ -51,12 +62,14 @@
       }
     }
 ```
+
 #### 伪类下的变量 [代码](https://codepen.io/LcCode/pen/pVmWyo)
 ```css
     div:hover{
       --width: 120px;
     }
 ```
+
 js操作css变量
 ```css
    /* css变量很大的一个好处就是它是动态的，我们可以随时通过js去改变变量的值，其他使用相应变量的属性也会同时改变 */
@@ -98,10 +111,6 @@ css渐变共有两种，线性渐变和径向渐变
 
 ```
 args = ([<angle> | to <side-or-corner>]? <color-stop> [, <color-stop>]+ )
-
-渐变角度：<angle> = 0deg - 360deg
-<side-or-corner> = <left [bottom | top]> | <right [bottom | top]> | top | bottom
-<color-stop> = <color> [<percentage> | <length>]
 ``` 
 
 #### 线性渐变示例
@@ -271,26 +280,64 @@ CSS3D变换和2D变换相似，也包括平移(translate3d)、旋转(rotate3d)�
 ### 简单介绍
 
 CSS 动画属性大家都用过
+`animation: ani 2s ease 1s infinite;`
 
-### 使用
+    ani: 动画名，必须
+    2s：动画时长，必须
+    ease：动画曲线，默认为ease
+    1s：动画延时，默认为0
+    infinite：动画播放次数，infinite表示无限，也可设为整数，表示具体多少次，默认不写为1
 
-1. CSS animation兼容性
+还有其它几个属性，不常用，这里就不说了。大家感兴趣了可以自己下去看看。
+
+
+### CSS animation兼容性
 
 ![CSS animation兼容性](images/caniuseCSSAnimation.png)
 
-2. 用法
+### 使用 [代码](https://codepen.io/LcCode/pen/odRdzj)
 
-## 5. SVG
+```css
+    /* 使用动画 */
+    div {
+        width: 200px;
+        animation: ani 2s ease 1s infinite;
+    }
+    /* 定义动画 */
+    @keyframes ani {
+        to {
+            width: 100px
+        }
+    }
+```
 
-1. SVG兼容性
+## 5. SVG与css动画
+
+### SVG兼容性
 
 ![SVG兼容性](images/caniuseSvg.png)
 
-2. SVG介绍
-    - svg内置图形
-    - path介绍
+### SVG(可缩放矢量图形)简单介绍
 
-3. SVG线条动画
+SVG 使用 XML 格式定义图像，所以与其他的图像格式相比，有更多的优势：
+
+    - SVG 可被文本编辑器读取或修改（比如记事本）
+    - SVG 与 JPEG 和 GIF 等图像比起来，尺寸更小，且可压缩性更强
+    - SVG 是可伸缩的
+    - SVG 可在图像质量不下降的情况下被放大
+    - SVG 图像中的文本是可选的，同时也是可搜索的（很适合制作地图）
+    - SVG 可以内嵌到dom节点中，拥有很多dom节点的特性。
+
+svg有很多内置形状，
+
+矩形 `rect`、圆形 `circle`、椭圆 `ellipse`、线 `line`、折线 `polyline`、多边形 `polygon` 以及 路径 `path`
+
+最常用也最强大的是 路径：`path`
+
+svg内容很多，我就不一一介绍了，下面给大家展示几个结合svg和css animation实现的动画效果
+
+
+### SVG路径动画
 ```
 stroke-dasharray
 stroke-dashoffect
