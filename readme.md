@@ -342,10 +342,3 @@ svg内容很多，我就不一一介绍了，下面给大家展示几个结合sv
 stroke-dasharray
 stroke-dashoffect
 ```
-
-## 补充: CSS filter属性
-
-1. CSS filter兼容性
-![CSS filter兼容性](images/caniuseCSSFilter.png)
-
-2. filter各种属性介绍
