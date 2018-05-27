@@ -379,4 +379,12 @@ stroke-dasharray: 2 4 8;
 
 [代码示例](https://codepen.io/LcCode/pen/aGeXOb)
 
-#### 线条动画示例 [代码](https://codepen.io/LcCode/pen/rvXoGZ)
+#### 实现路径动画
+
+当stroke-dasharray数值比路径的长度还要长时，就能用一段实线或一段缺口绘制整个路径。
+
+我们加上与路径长度相同的偏移值时，先绘制到路径上的就是缺口，就可以用缺口位置填充路径，路径不可见。
+
+当一点一点的改变偏移值时，实线就会一点点的显示出来。看起来就像是一点一点的绘制上去。这就实现了路径动画。
+
+如：[代码](https://codepen.io/LcCode/pen/rvXoGZ)
