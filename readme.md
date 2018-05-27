@@ -352,7 +352,31 @@ svg内容很多，我就不一一介绍了，下面给大家展示几个结合sv
 
 
 ### SVG路径动画
+
+#### 首先介绍两个属性
+
+##### stroke-dasharray 属性
+
+`stroke-dasharray` 定义用来描边的点线长度
+
+接收n个数字作为参数，参数之间用数字或者空格隔开
+
+如： 
 ```
-stroke-dasharray
-stroke-dashoffect
+stroke-dasharray: 2;
+stroke-dasharray: 2, 4;
+stroke-dasharray: 2 4 8;
 ```
+浏览器会循环使用列表中的数据指定线条和缺口的长度
+
+[代码示例](https://codepen.io/LcCode/pen/RyXEvG)
+
+##### stroke-dashoffect 属性
+
+`stroke-dashoffect`属性指定了dash模式到路径开始的距离
+
+可以是数值（可以取负数），也可以是百分比。
+
+[代码示例](https://codepen.io/LcCode/pen/aGeXOb)
+
+#### 线条动画示例 [代码](https://codepen.io/LcCode/pen/rvXoGZ)
