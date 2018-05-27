@@ -353,11 +353,11 @@ svg内容很多，我就不一一介绍了，下面给大家展示几个结合sv
 
 ### SVG路径动画
 
-#### 首先介绍两个属性
+#### 首先介绍两个属性`stroke-dasharray` 和 `stroke-dashoffect`
 
 ##### stroke-dasharray 属性
 
-`stroke-dasharray` 定义用来描边的点线长度
+`stroke-dasharray` 可以将路径绘制为虚线，用来定义描边的点线长度
 
 接收n个数字作为参数，参数之间用数字或者空格隔开
 
